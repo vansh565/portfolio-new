@@ -286,14 +286,14 @@ const CERTIFICATES = [
     link2:{label:"Verify", url:"assets/2.jpeg"}
   },
    { 
-    title:"Certificate 2",
+    title:"Certificate 3",
     subtitle:"Issuer • Year",
     img:"assets/6.jpeg",
     link1:{label:"View", url:"assets/6.jpeg"},
     link2:{label:"Verify", url:"assets/6.jpeg"}
   },
    { 
-    title:"Certificate 2",
+    title:"Certificate 4",
     subtitle:"Issuer • Year",
     img:"assets/5.jpeg",
     link1:{label:"View", url:"assets/5.jpeg"},
@@ -301,14 +301,14 @@ const CERTIFICATES = [
   },
 
    { 
-    title:"Certificate 2",
+    title:"Certificate 5",
     subtitle:"Issuer • Year",
     img:"assets/4.jpeg",
     link1:{label:"View", url:"assets/4.jpeg"},
     link2:{label:"Verify", url:"assets/4.jpeg"}
   },
    { 
-    title:"Certificate 2",
+    title:"Certificate 6",
     subtitle:"Issuer • Year",
     img:"assets/3.jpeg",
     link1:{label:"View", url:"assets/3.jpeg"},
