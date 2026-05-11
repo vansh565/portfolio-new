@@ -9,7 +9,7 @@ const PROFILE = {
 
   // Put real links here
   resumeUrl: "ADD_YOUR_RESUME_PDF_LINK_HERE",
-  linkedin: "www.linkedin.com/in/vansh-sharma-b9b80b298",
+  linkedin: "https://www.linkedin.com/in/vansh-sharma-b9b80b298/",",
   github: "https://github.com/vansh565",
   scholar: "ADD_GOOGLE_SCHOLAR_LINK_HERE",
 
