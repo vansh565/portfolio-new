@@ -276,7 +276,7 @@
 
         <div class="card glass tilt cardXL">
           <h3>Quick Links</h3>
-          <p class="muted">All links are functional from script.js</p>
+         
           <div class="linkGrid" id="linkGrid"></div>
         </div>
       </div>
@@ -353,8 +353,7 @@
     <div class="container">
      <div class="sectionHead">
   <h2 data-i18n="sec_experience">Work Experience</h2>
-  <p data-i18n="sec_experience_sub">Each card supports 2 images + certificate PDF + 2 link buttons (from code).</p>
-</div>
+ 
 
       <div class="timeline" id="expTimeline"></div>
     </div>
@@ -579,27 +578,44 @@
 
     <div class="contact-grid">
 
-      <!-- Quick Info card -->
-      <div class="card glass tilt contactInfo cardXL" id="contactCard">
+    <!-- ===================== CONTACT SECTION (CLEANED) ===================== -->
+<!-- Only the functional Send Message card remains. The Quick Info card has been removed. -->
+
+<!-- Send Message card with Web3Forms API Integration -->
+<div class="card glass tilt contactFormCard cardXL">
+  
+   <img src="assets/v.jpeg" alt="Vansh Sharma" 
+  <p class="muted">Fill the form below and I'll get back to you soon.</p>
         <!-- Your quick info content / JS filled -->
       </div>
 
-      <!-- Send Message card -->
       <div class="card glass tilt contactFormCard cardXL">
-        <h3>Send a Message</h3>
-        <p class="muted">Form sizing fixed + responsive.</p>
+  <h3>Send a Message</h3>
+  <p class="muted">Fill the form below and I'll get back to you soon.</p>
 
-        <form class="form" onsubmit="return false;">
-          <div class="formRow2">
-            <input class="input" placeholder="Your Name" required />
-            <input class="input" placeholder="Your Email" required />
-          </div>
-          <input class="input" placeholder="Subject" />
-          <textarea class="input textarea" rows="7" placeholder="Your Message"></textarea>
-          <button class="btn primary formBtn" type="submit">Send (demo)</button>
-          <div class="formHint"></div>
-        </form>
-      </div>
+  <form action="https://api.web3forms.com/submit" method="POST" class="form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="2c717eb9-02f1-4d75-ab60-a4227f6a1cc0">
+    
+    <!-- Optional: redirect after submission (leave empty to stay on page) -->
+    <input type="hidden" name="redirect" value="false">
+    
+    <!-- Spam protection (honeypot) -->
+    <input type="checkbox" name="botcheck" style="display: none;">
+    
+    <div class="formRow2">
+      <input class="input" type="text" name="name" placeholder="Your Name" required />
+      <input class="input" type="email" name="email" placeholder="Your Email" required />
+    </div>
+    <input class="input" type="text" name="subject" placeholder="Subject" required />
+    <textarea class="input textarea" name="message" rows="7" placeholder="Your Message" required></textarea>
+    
+    <button class="btn primary formBtn" type="submit">
+      <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message
+    </button>
+    <div class="formHint" id="formStatus"></div>
+  </form>
+</div>
 
     </div>
 
