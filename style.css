@@ -3020,4 +3020,1109 @@ body.light [style*="-webkit-background-clip: text"] {
   -webkit-text-fill-color: #0f172a !important;
   color: #0f172a !important;
   background: transparent !important;
+  
+}
+/* =====================
+   COMPLETE RESPONSIVE CSS
+   Works on ALL Devices (iPhone, Android, iPad, Tablets)
+   ===================== */
+
+/* Reset and Base */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ultra Small Devices (iPhone SE, Galaxy Fold - 320px to 375px) */
+@media (max-width: 375px) {
+  .container {
+    width: 92% !important;
+    padding: 0 8px !important;
+  }
+  
+  .section {
+    padding: 40px 0 !important;
+  }
+  
+  .heroLeft .title {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .heroLeft .subtitle {
+    font-size: 12px !important;
+  }
+  
+  .btn {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  
+  .avatarRingHuge {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .rightTitle {
+    font-size: 18px !important;
+  }
+  
+  .rightSub {
+    font-size: 10px !important;
+  }
+  
+  .rightFeature {
+    padding: 6px 10px !important;
+  }
+  
+  .sectionHead h2 {
+    font-size: 24px !important;
+  }
+  
+  .card h3 {
+    font-size: 16px !important;
+  }
+  
+  .achievementPremiumBox h3 {
+    font-size: 20px !important;
+  }
+  
+  .achievementHighlights {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Small Devices (iPhone 6/7/8, Android Phones - 376px to 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .container {
+    width: 90% !important;
+    padding: 0 10px !important;
+  }
+  
+  .heroLeft .title {
+    font-size: 30px !important;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .avatarRingHuge {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  
+  .rightTitle {
+    font-size: 22px !important;
+  }
+  
+  .achievementHighlights {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Medium Devices (iPhone Plus, Android Large - 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    width: 88% !important;
+    max-width: 700px !important;
+  }
+  
+  .heroLeft .title {
+    font-size: 34px !important;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .avatarRingHuge {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .rightTitle {
+    font-size: 26px !important;
+  }
+  
+  .achievementHighlights {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .projCatGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Tablets (iPad, iPad Mini, Android Tablets - 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 90% !important;
+    max-width: 960px !important;
+  }
+  
+  .heroGrid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .avatarRingHuge {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  
+  .rightTitle {
+    font-size: 28px !important;
+  }
+  
+  .achievementHighlights {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  .projCatGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Large Tablets and Small Laptops (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    width: 95% !important;
+    max-width: 1100px !important;
+  }
+  
+  .projCatGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .certGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Common Responsive Styles for ALL Mobile Devices */
+
+/* Hero Section */
+@media (max-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .heroLeft {
+    text-align: center;
+  }
+  
+  .kicker {
+    display: inline-flex !important;
+    margin: 0 auto !important;
+  }
+  
+  .ctaRow {
+    justify-content: center !important;
+  }
+  
+  .statsGrid {
+    justify-content: center !important;
+  }
+  
+  .heroBanner {
+    text-align: left;
+  }
+  
+  .heroRight .heroCard {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .floatingRow {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .heroBannerRight {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Grid Layouts */
+@media (max-width: 768px) {
+  .grid2, .grid3, .projCatGrid, .certGrid, .recGrid, .awardGrid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* Cards */
+@media (max-width: 768px) {
+  .card, .cardXL, .tItem, .projGridCard, .certCard, .recCard {
+    padding: 16px !important;
+  }
+  
+  .card .muted, .card p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Skills Logos */
+@media (max-width: 768px) {
+  .logoGrid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .logoItem {
+    padding: 10px 12px !important;
+  }
+  
+  .logoItem i {
+    font-size: 22px !important;
+  }
+  
+  .logoItem span {
+    font-size: 13px !important;
+  }
+}
+
+/* Experience Timeline */
+@media (max-width: 768px) {
+  .tTop {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .org {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  
+  .orgLogo {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .tRole {
+    font-size: 16px !important;
+  }
+  
+  .tOrg {
+    font-size: 12px !important;
+  }
+  
+  .tDate {
+    font-size: 11px !important;
+  }
+  
+  .tagRow {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  
+  .tag {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+  
+  .bullets li {
+    font-size: 12px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .mediaGrid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .btnRow {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .linkBtn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Education */
+@media (max-width: 768px) {
+  .eduTop {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+  
+  .eduLogo {
+    margin: 0 auto !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  .eduDegree {
+    font-size: 16px !important;
+  }
+  
+  .eduInst {
+    font-size: 13px !important;
+  }
+  
+  .eduDate {
+    font-size: 12px !important;
+  }
+}
+
+/* Projects */
+@media (max-width: 768px) {
+  .projCatTitle {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+    text-align: center;
+  }
+  
+  .projGridCard {
+    text-align: center;
+  }
+  
+  .projThumb {
+    height: 150px !important;
+  }
+  
+  .stackPill {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+  
+  .certActions {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .certActions .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Certificates */
+@media (max-width: 768px) {
+  .certCard {
+    text-align: center;
+  }
+  
+  .certThumb {
+    height: 180px !important;
+  }
+  
+  .certTitle {
+    font-size: 14px !important;
+  }
+  
+  .certSub {
+    font-size: 11px !important;
+  }
+  
+  .certActions {
+    justify-content: center !important;
+  }
+}
+
+/* Achievements */
+@media (max-width: 768px) {
+  .achievementPremiumBox {
+    padding: 25px 15px !important;
+    margin: 30px 10px !important;
+    border-radius: 24px !important;
+  }
+  
+  .achievementPremiumBox h3 {
+    font-size: 22px !important;
+    text-align: center !important;
+  }
+  
+  .achievementPremiumBox p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+  
+  .achievementHighlights {
+    gap: 12px !important;
+  }
+  
+  .highlightItem {
+    padding: 15px 10px !important;
+  }
+  
+  .highlightItem h4 {
+    font-size: 28px !important;
+  }
+  
+  .highlightItem span {
+    font-size: 11px !important;
+  }
+}
+
+/* Contact Form */
+@media (max-width: 768px) {
+  .contactFormCard {
+    padding: 20px !important;
+  }
+  
+  .contactFormCard img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .formRow2 {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .input {
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+  }
+  
+  .formBtn {
+    width: 100% !important;
+    padding: 12px !important;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 !important;
+  }
+  
+  .footGrid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+  
+  .footBrand {
+    justify-content: center !important;
+    flex-direction: column !important;
+    text-align: center;
+  }
+  
+  .socialRow {
+    justify-content: center !important;
+  }
+  
+  .footQrCard {
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+  
+  .footLinks {
+    align-items: center !important;
+  }
+  
+  .legalRow {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+  
+  .meetGrid {
+    grid-template-columns: 1fr !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .newsRow {
+    flex-direction: column !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .backTop {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+/* Navigation Bar Mobile */
+@media (max-width: 1024px) {
+  .nav {
+    flex-wrap: wrap !important;
+    padding: 10px 15px !important;
+  }
+  
+  .brand {
+    flex: 1;
+  }
+  
+  .navSearch {
+    order: 3;
+    width: 100% !important;
+    margin-top: 12px;
+  }
+  
+  .searchWrap {
+    width: 100%;
+  }
+  
+  .navRight {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .navLinks {
+    display: none;
+    width: 100%;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navLinks.open {
+    display: flex !important;
+  }
+  
+  .navLinks a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px !important;
+    border-radius: 12px !important;
+  }
+  
+  .navToggle {
+    display: block !important;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--txt);
+  }
+  
+  .langBtn {
+    padding: 8px 12px !important;
+  }
+}
+
+/* Fix for Notch and Dynamic Island (iPhone) */
+@supports (padding: max(0px)) {
+  .navwrap {
+    padding-top: max(10px, env(safe-area-inset-top));
+  }
+  
+  .footer {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  
+  .container {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+}
+
+/* Fix for Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover, 
+  .linkBtn:hover, 
+  .social:hover,
+  .tilt:hover,
+  .tilt-sm:hover {
+    transform: none !important;
+  }
+  
+  .btn:active,
+  .linkBtn:active {
+    transform: scale(0.97) !important;
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Landscape Mode Fix */
+@media (max-width: 900px) and (orientation: landscape) {
+  .heroGrid {
+    gap: 20px !important;
+  }
+  
+  .heroLeft .title {
+    font-size: 28px !important;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .avatarRingHuge {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .section {
+    padding: 40px 0 !important;
+  }
+}
+
+/* Smooth Scrolling for Mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Disable Zoom on Input Focus for Mobile (iOS) */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve Tap Targets for Mobile */
+@media (max-width: 768px) {
+  a, button, .btn, .linkBtn, .social, .navLinks a, .backTop {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tag, .badge, .stackPill {
+    padding: 6px 12px !important;
+  }
+}
+
+/* Hide Scrollbar on Mobile but Keep Functionality */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+  }
+}
+/* =====================
+   LIGHT MODE FIX - FULL VISIBILITY
+   ===================== */
+
+/* Force all text to be dark and visible in light mode */
+body.light,
+body.light * {
+  color-scheme: light;
+}
+
+/* Main background and text colors */
+body.light {
+  background: #f5f7fb !important;
+  color: #1a1a2e !important;
+}
+
+body.light .container,
+body.light .section,
+body.light .card,
+body.light .glass {
+  color: #1a1a2e !important;
+}
+
+/* All text elements */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light p,
+body.light span,
+body.light li,
+body.light a,
+body.light .muted,
+body.light .title,
+body.light .subtitle,
+body.light .kicker,
+body.light .hbTitle,
+body.light .hbSub,
+body.light .rightTitle,
+body.light .rightSub,
+body.light .rightBadge,
+body.light .rightFeature p,
+body.light .floatTitle,
+body.light .floatValue,
+body.light .heroCardInfo h3,
+body.light .bullets li,
+body.light .badge {
+  color: #1a1a2e !important;
+}
+
+/* Muted text */
+body.light .muted {
+  color: #4a4a6a !important;
+  opacity: 1 !important;
+}
+
+/* Cards and Glass elements */
+body.light .card,
+body.light .glass,
+body.light .heroCard,
+body.light .floatCard,
+body.light .heroBanner,
+body.light .tItem,
+body.light .projGridCard,
+body.light .certCard,
+body.light .footQrCard,
+body.light .contactFormCard {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Hero section light mode */
+body.light .hero-video-overlay {
+  background: rgba(245, 247, 251, 0.85) !important;
+}
+
+body.light .hero-bg-video {
+  opacity: 0.3 !important;
+}
+
+/* Navbar light mode */
+body.light .nav {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light .navLinks a {
+  color: #1a1a2e !important;
+}
+
+body.light .navLinks a:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #2563eb !important;
+}
+
+/* Search bar light mode */
+body.light .searchWrap {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light .searchInput {
+  color: #1a1a2e !important;
+}
+
+body.light .searchInput::placeholder {
+  color: #888 !important;
+}
+
+/* Buttons light mode */
+body.light .btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #1a1a2e !important;
+}
+
+body.light .btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+  color: white !important;
+  border: none !important;
+}
+
+body.light .btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Stats cards light mode */
+body.light .statCard {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .statValue {
+  color: #2563eb !important;
+}
+
+body.light .statLabel {
+  color: #4a4a6a !important;
+}
+
+/* Skills section light mode */
+body.light .logoItem {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .logoItem span {
+  color: #1a1a2e !important;
+}
+
+body.light .softNote {
+  color: #666 !important;
+}
+
+/* Tags and badges light mode */
+body.light .tag,
+body.light .badge,
+body.light .stackPill {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1a1a2e !important;
+}
+
+/* Timeline/Experience light mode */
+body.light .tItem {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.light .tRole,
+body.light .tOrg,
+body.light .tDate {
+  color: #1a1a2e !important;
+}
+
+/* Education light mode */
+body.light .eduDegree,
+body.light .eduInst,
+body.light .eduDate {
+  color: #1a1a2e !important;
+}
+
+/* Projects light mode */
+body.light .projGridCard .pTitle,
+body.light .projGridCard .muted {
+  color: #1a1a2e !important;
+}
+
+/* Certificates light mode */
+body.light .certTitle,
+body.light .certSub {
+  color: #1a1a2e !important;
+}
+
+/* Achievements light mode */
+body.light .achievementPremiumBox {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light .achievementPremiumBox h3,
+body.light .achievementPremiumBox p,
+body.light .achievementBadge {
+  color: #1a1a2e !important;
+}
+
+body.light .highlightItem {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .highlightItem h4 {
+  color: #2563eb !important;
+}
+
+body.light .highlightItem span {
+  color: #4a4a6a !important;
+}
+
+/* Contact form light mode */
+body.light .input {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #1a1a2e !important;
+}
+
+body.light .input::placeholder {
+  color: #888 !important;
+}
+
+body.light .input:focus {
+  border-color: #3b82f6 !important;
+  outline: none !important;
+}
+
+/* Footer light mode */
+body.light .footer {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .footName,
+body.light .footTag,
+body.light .footNote,
+body.light .footTitle,
+body.light .footLinks a {
+  color: #1a1a2e !important;
+}
+
+body.light .footLinks a:hover {
+  color: #2563eb !important;
+}
+
+body.light .social {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1a1a2e !important;
+}
+
+body.light .social:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .backTop {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1a1a2e !important;
+}
+
+/* Hero banner right side light mode */
+body.light .heroBannerRight {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.light .heroRightOverlay {
+  background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0.3)) !important;
+}
+
+body.light .rightBadge {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1a1a2e !important;
+}
+
+/* Floating cards light mode */
+body.light .floatCard {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Media cards light mode */
+body.light .mediaCard {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .mediaName {
+  color: #1a1a2e !important;
+}
+
+/* Link cards light mode */
+body.light .linkCard {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .lcTitle {
+  color: #1a1a2e !important;
+}
+
+/* Section headings light mode */
+body.light .sectionHead h2 {
+  color: #1a1a2e !important;
+}
+
+body.light .sectionHead p {
+  color: #4a4a6a !important;
+}
+
+/* Gradient text fix for light mode */
+body.light .grad,
+body.light [class*="grad"] {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f59e0b) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Video overlays light mode */
+body.light .about-video-overlay,
+body.light .skills-video-overlay,
+body.light .edu-video-overlay {
+  background: rgba(245, 247, 251, 0.85) !important;
+}
+
+body.light .about-bg-video,
+body.light .skills-bg-video,
+body.light .edu-bg-video {
+  opacity: 0.2 !important;
+}
+
+/* Language dropdown light mode */
+body.light .langMenu {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light .langItem {
+  color: #1a1a2e !important;
+}
+
+body.light .langItem:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Icon buttons light mode */
+body.light .iconBtn {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #1a1a2e !important;
+}
+
+/* Progress bar light mode */
+body.light .progress {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+}
+
+/* Footer QR light mode */
+body.light .footQrCard {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.light .footQrBadge {
+  color: #1a1a2e !important;
+}
+
+/* Certificate actions light mode */
+body.light .certActions .btn {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1a1a2e !important;
+}
+
+/* Project actions light mode */
+body.light .certActions .btn.ghost {
+  background: transparent !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure all text is readable */
+body.light *::placeholder {
+  color: #999 !important;
+}
+
+/* Fix for any remaining white text */
+body.light [style*="color: white"],
+body.light [style*="color:#fff"],
+body.light [style*="color: #fff"] {
+  color: #1a1a2e !important;
 }
