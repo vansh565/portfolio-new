@@ -2601,3 +2601,423 @@ body.light .highlightItem span{
     font-size: 34px;
   }
 
+}
+/* =====================
+   FIX LIGHT MODE VISIBILITY
+   ===================== */
+body.light {
+  --bg0: #F6F8FF;
+  --txt: #0B1022;
+  --muted: rgba(11,16,34,.75);
+  --glass: rgba(255,255,255,.85);
+  --stroke: rgba(0,0,0,.12);
+  --shadow: 0 12px 40px rgba(0,0,0,.08);
+  --shadow2: 0 18px 80px rgba(0,0,0,.1);
+}
+
+/* Light mode text fixes */
+body.light .kicker,
+body.light .title,
+body.light .subtitle,
+body.light .heroCardInfo h3,
+body.light .bullets,
+body.light .card h3,
+body.light .card p,
+body.light .card .muted,
+body.light .statLabel,
+body.light .statValue,
+body.light .btn,
+body.light .navLinks a,
+body.light .brand {
+  color: #0B1022;
+}
+
+body.light .muted {
+  color: rgba(11,16,34,.65);
+}
+
+/* Light mode card backgrounds */
+body.light .card,
+body.light .glass,
+body.light .statCard,
+body.light .tItem,
+body.light .logoItem,
+body.light .certCard,
+body.light .projGridCard,
+body.light .awardCard {
+  background: rgba(255,255,255,.9);
+  border-color: rgba(0,0,0,.1);
+}
+
+/* Light mode input fields */
+body.light .input {
+  background: rgba(0,0,0,.05);
+  color: #0B1022;
+  border-color: rgba(0,0,0,.15);
+}
+
+body.light .input::placeholder {
+  color: rgba(11,16,34,.5);
+}
+
+/* Light mode navbar */
+body.light .nav {
+  background: rgba(255,255,255,.95);
+  border-color: rgba(0,0,0,.1);
+}
+
+body.light .navLinks a:hover {
+  background: rgba(0,0,0,.08);
+}
+
+/* Light mode buttons */
+body.light .btn {
+  background: rgba(0,0,0,.05);
+  border-color: rgba(0,0,0,.15);
+  color: #0B1022;
+}
+
+body.light .btn.primary {
+  background: var(--grad);
+  color: #071022;
+}
+
+body.light .btn:hover {
+  background: rgba(0,0,0,.1);
+}
+
+/* Light mode footer */
+body.light .footer {
+  background: rgba(255,255,255,.95);
+  border-top-color: rgba(0,0,0,.1);
+}
+
+/* Light mode achievement box */
+body.light .achievementPremiumBox {
+  background: rgba(255,255,255,.9);
+  border-color: rgba(0,0,0,.1);
+}
+
+body.light .highlightItem {
+  background: rgba(0,0,0,.05);
+  border-color: rgba(0,0,0,.08);
+}
+
+body.light .highlightItem h4,
+body.light .highlightItem span {
+  color: #0B1022;
+}
+
+/* Light mode loader fix */
+body.light .pageLoader {
+  background: rgba(246,248,255,.96);
+}
+
+body.light .loaderCard {
+  background: rgba(255,255,255,.9);
+  border-color: rgba(0,0,0,.1);
+}
+
+/* Hero section light mode */
+body.light .hero-video-overlay {
+  background: linear-gradient(to bottom, rgba(246,248,255,.7), rgba(246,248,255,.85));
+}
+/* Fix for hero_featured_sub paragraph visibility */
+body.light .hbSub,
+body.light [data-i18n="hero_featured_sub"],
+body.light .heroBanner .hbSub {
+  color: #1e293b !important;
+  background: transparent !important;
+  -webkit-text-fill-color: #1e293b !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Also fix the container */
+body.light .heroBannerIn {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+body.light .heroBanner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+/* =====================
+   FIX ALL TEXT VISIBILITY IN LIGHT MODE
+   ===================== */
+
+/* Force all text to be visible in light mode */
+body.light,
+body.light * {
+  color-scheme: light;
+}
+
+/* Main text colors */
+body.light,
+body.light .container,
+body.light .section {
+  color: #0f172a !important;
+}
+
+body.light .muted,
+body.light .muted * {
+  color: #475569 !important;
+}
+
+/* Navbar light mode */
+body.light .nav,
+body.light .nav * {
+  color: #0f172a !important;
+}
+
+body.light .navLinks a {
+  color: #0f172a !important;
+}
+
+body.light .navLinks a:hover {
+  color: #3b82f6 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Hero section text */
+body.light .heroLeft .kicker,
+body.light .heroLeft .title,
+body.light .heroLeft .title *,
+body.light .heroLeft .subtitle,
+body.light .heroLeft p {
+  color: #0f172a !important;
+}
+
+body.light .title .grad {
+  background: linear-gradient(135deg, #3b82f6, #a855f7, #f97316) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Stats cards */
+body.light .statCard,
+body.light .statCard * {
+  color: #0f172a !important;
+}
+
+body.light .statCard .statLabel {
+  color: #475569 !important;
+}
+
+/* Hero banner (scholarship text) */
+body.light .heroBanner,
+body.light .heroBannerIn,
+body.light .heroBanner .hbTitle,
+body.light .heroBanner .hbSub,
+body.light [data-i18n="hero_featured"],
+body.light [data-i18n="hero_featured_sub"] {
+  color: #0f172a !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+body.light .heroBanner .hbSub {
+  color: #334155 !important;
+  -webkit-text-fill-color: #334155 !important;
+}
+
+/* Hero card right side */
+body.light .heroCard,
+body.light .heroCardInfo,
+body.light .heroCardInfo *,
+body.light .bullets,
+body.light .bullets li,
+body.light .heroBadges .badge {
+  color: #0f172a !important;
+}
+
+/* All cards */
+body.light .card,
+body.light .card *,
+body.light .glass,
+body.light .glass * {
+  color: #0f172a !important;
+}
+
+body.light .card .muted,
+body.light .glass .muted {
+  color: #475569 !important;
+}
+
+/* Skills section */
+body.light .logoItem,
+body.light .logoItem span,
+body.light .logoItem i {
+  color: #0f172a !important;
+}
+
+body.light .softNote {
+  color: #64748b !important;
+}
+
+/* Experience timeline */
+body.light .tItem,
+body.light .tItem * {
+  color: #0f172a !important;
+}
+
+body.light .tRole,
+body.light .tOrg,
+body.light .tDate,
+body.light .tag {
+  color: #0f172a !important;
+}
+
+body.light .tag {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Education */
+body.light .eduDegree,
+body.light .eduInst,
+body.light .eduDate {
+  color: #0f172a !important;
+}
+
+/* Projects */
+body.light .projGridCard,
+body.light .projGridCard *,
+body.light .projectCard,
+body.light .projectCard * {
+  color: #0f172a !important;
+}
+
+body.light .pTitle,
+body.light .pMeta,
+body.light .pDesc {
+  color: #0f172a !important;
+}
+
+/* Certificates */
+body.light .certCard,
+body.light .certCard * {
+  color: #0f172a !important;
+}
+
+body.light .certTitle,
+body.light .certSub {
+  color: #0f172a !important;
+}
+
+/* Achievements */
+body.light .achievementPremiumBox,
+body.light .achievementPremiumBox * {
+  color: #0f172a !important;
+}
+
+body.light .achievementPremiumBox p {
+  color: #334155 !important;
+}
+
+body.light .highlightItem,
+body.light .highlightItem * {
+  color: #0f172a !important;
+}
+
+body.light .highlightItem h4 {
+  color: #3b82f6 !important;
+}
+
+body.light .highlightItem span {
+  color: #475569 !important;
+}
+
+/* Contact section */
+body.light .contactFormCard,
+body.light .contactFormCard * {
+  color: #0f172a !important;
+}
+
+body.light .input {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light .input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Buttons */
+body.light .btn {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light .btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #a855f7, #f97316) !important;
+  color: #ffffff !important;
+}
+
+body.light .btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Footer */
+body.light .footer,
+body.light .footer * {
+  color: #0f172a !important;
+}
+
+body.light .footName,
+body.light .footTag,
+body.light .footNote,
+body.light .footTitle,
+body.light .footLinks a {
+  color: #0f172a !important;
+}
+
+body.light .footLinks a:hover {
+  color: #3b82f6 !important;
+}
+
+/* Social links */
+body.light .socialRow .social {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Back to top button */
+body.light .backTop {
+  color: #0f172a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Headings */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light .sectionHead h2,
+body.light .sectionHead p {
+  color: #0f172a !important;
+}
+
+/* Links */
+body.light a:not(.btn):not(.social) {
+  color: #3b82f6 !important;
+}
+
+body.light a:not(.btn):not(.social):hover {
+  color: #2563eb !important;
+}
+
+/* Fix for any gradient text */
+body.light [style*="background-clip: text"],
+body.light [style*="-webkit-background-clip: text"] {
+  -webkit-text-fill-color: #0f172a !important;
+  color: #0f172a !important;
+  background: transparent !important;
+}
