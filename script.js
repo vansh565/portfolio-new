@@ -2763,4 +2763,3 @@ if (pageLoader){
     setTimeout(() => pageLoader.classList.add("hide"), 200);
   });
 }
-
