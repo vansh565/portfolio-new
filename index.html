@@ -1,672 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Vansh LinkTree</title>
-  <!-- Google Fonts & Font Awesome 6 (free icons) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      user-select: none; /* subtle, makes it sleek; links still clickable */
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vansh Sharma | Portfolio</title>
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at 10% 20%, rgba(10, 12, 28, 1) 0%, rgba(2, 5, 15, 0.96) 100%);
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
-      position: relative;
-      overflow-x: hidden;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    /* animated particles / floating orbs */
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.5;
-      z-index: 0;
-      animation: floatOrb 18s infinite alternate ease-in-out;
-      pointer-events: none;
-    }
+  <!-- devicon for stack logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    .orb-1 {
-      width: 45vw;
-      height: 45vw;
-      background: radial-gradient(circle, #ff5f7e, #ff2e63);
-      top: -15vh;
-      right: -20vw;
-      animation-duration: 22s;
-    }
-
-    .orb-2 {
-      width: 55vw;
-      height: 55vw;
-      background: radial-gradient(circle, #4facfe, #00f2fe);
-      bottom: -20vh;
-      left: -25vw;
-      opacity: 0.4;
-      animation-duration: 28s;
-    }
-
-    .orb-3 {
-      width: 35vw;
-      height: 35vw;
-      background: radial-gradient(circle, #f093fb, #f5576c);
-      top: 40%;
-      right: 5%;
-      opacity: 0.3;
-      animation-duration: 25s;
-      animation-delay: -5s;
-    }
-
-    @keyframes floatOrb {
-      0% {
-        transform: translate(0, 0) scale(1);
-      }
-      100% {
-        transform: translate(5%, 8%) scale(1.12);
-      }
-    }
-
-    /* main glassmorphic card */
-    .link-card {
-      position: relative;
-      z-index: 10;
-      max-width: 560px;
-      width: 100%;
-      background: rgba(20, 25, 45, 0.55);
-      backdrop-filter: blur(16px);
-      border-radius: 3rem;
-      padding: 2rem 2rem 2.5rem;
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.4s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .link-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
-    }
-
-    /* profile section */
-    .profile {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .avatar-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    .avatar:hover {
-      transform: scale(1.02);
-      border-color: #ffb347;
-      box-shadow: 0 0 0 4px rgba(255, 180, 71, 0.3);
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: 6px;
-      right: 6px;
-      background: #0f212e;
-      backdrop-filter: blur(4px);
-      padding: 5px 8px;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #a6ffcb;
-      border: 1px solid rgba(166, 255, 203, 0.5);
-      font-family: monospace;
-      letter-spacing: 0.5px;
-    }
-
-    .name {
-      font-size: 1.9rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #FFFFFF, #D6E2FF);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-top: 1rem;
-      letter-spacing: -0.3px;
-    }
-
-    .bio {
-      color: #b9c8ff;
-      margin-top: 0.5rem;
-      font-weight: 500;
-      font-size: 0.98rem;
-      backdrop-filter: blur(2px);
-      background: rgba(255, 255, 255, 0.05);
-      display: inline-block;
-      padding: 0.2rem 1rem;
-      border-radius: 50px;
-    }
-
-    /* stats row mini */
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 1.7rem;
-      margin: 1.5rem 0 0.5rem;
-    }
-
-    .stat-item {
-      text-align: center;
-      background: rgba(255,255,240,0.03);
-      padding: 0.4rem 0.8rem;
-      border-radius: 60px;
-      backdrop-filter: blur(4px);
-    }
-
-    .stat-number {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: white;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      color: #a3b9ff;
-      letter-spacing: 0.3px;
-    }
-
-    /* premium link buttons */
-    .links-container {
-      margin: 2rem 0 1.6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .link-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(15, 20, 35, 0.7);
-      backdrop-filter: blur(10px);
-      padding: 0.9rem 1.6rem;
-      border-radius: 2rem;
-      text-decoration: none;
-      color: #f0f3ff;
-      font-weight: 600;
-      transition: all 0.25s ease-out;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .link-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .link-btn:hover::before {
-      left: 100%;
-    }
-
-    .link-btn:hover {
-      transform: translateX(8px) scale(1.01);
-      background: rgba(30, 40, 65, 0.85);
-      border-color: rgba(255, 200, 100, 0.5);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .btn-left i {
-      font-size: 1.6rem;
-      width: 28px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .link-btn:hover .btn-left i {
-      transform: scale(1.1);
-      color: #FFD966;
-    }
-
-    .btn-text {
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: -0.2px;
-    }
-
-    .btn-arrow {
-      background: rgba(255,255,245,0.1);
-      border-radius: 30px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.8rem;
-      font-weight: 400;
-      transition: all 0.2s;
-    }
-
-    .link-btn:hover .btn-arrow {
-      background: #ffb347;
-      color: #0c0f1c;
-      transform: translateX(3px);
-    }
-
-    /* social icons row */
-    .social-row {
-      display: flex;
-      justify-content: center;
-      gap: 1.3rem;
-      margin: 1.8rem 0 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    .social-icon {
-      background: rgba(20, 28, 45, 0.7);
-      backdrop-filter: blur(8px);
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 30px;
-      font-size: 1.6rem;
-      color: #eef5ff;
-      transition: all 0.25s ease;
-      border: 1px solid rgba(255,255,210,0.2);
-      text-decoration: none;
-    }
-
-    .social-icon:hover {
-      transform: translateY(-8px);
-      background: #ff914d;
-      color: #0a0e1c;
-      border-color: transparent;
-      box-shadow: 0 12px 20px -8px rgba(255, 145, 77, 0.4);
-    }
-
-    /* Footer watermark & animation */
-    .footer-note {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #6e81b0;
-      margin-top: 1rem;
-      letter-spacing: 0.4px;
-      font-weight: 400;
-    }
-
-    .click-feedback {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%) scale(0.8);
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(12px);
-      color: #ffecb3;
-      padding: 0.5rem 1.4rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      opacity: 0;
-      transition: opacity 0.2s, transform 0.2s;
-      pointer-events: none;
-      z-index: 200;
-      font-family: monospace;
-      border: 1px solid #ffb34750;
-    }
-
-    /* media tweaks */
-    @media (max-width: 480px) {
-      .link-card {
-        padding: 1.5rem 1.2rem 2rem;
-      }
-      .name {
-        font-size: 1.6rem;
-      }
-      .btn-text {
-        font-size: 0.9rem;
-      }
-      .btn-left i {
-        font-size: 1.3rem;
-      }
-      .avatar {
-        width: 90px;
-        height: 90px;
-      }
-    }
-
-    /* animated underline blink */
-    @keyframes softPulse {
-      0% { opacity: 0.6; text-shadow: 0 0 0px #ffb347; }
-      100% { opacity: 1; text-shadow: 0 0 4px #ffb347; }
-    }
-    .status-badge i {
-      font-size: 0.6rem;
-      margin-right: 4px;
-      animation: softPulse 1.2s infinite alternate;
-    }
-
-    /* loading entrance animation */
-    .link-card {
-      animation: cardGlide 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    @keyframes cardGlide {
-      from {
-        opacity: 0;
-        transform: translateY(40px) scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- animated background orbs -->
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-
-<!-- main card -->
-<div class="link-card">
-  <div class="profile">
-    <div class="avatar-wrapper">
-      <!-- premium avatar using generated placeholder via ui-avatars but we use random unsplash? to keep pure css we use svg placeholder but we make stylish initials avatar? To make pro, use elegant gradient avatar with emoji? Use Font Awesome? Prefer modern illustrated avatar with initials via canvas but easier: use an external placeholder? no external needed: DataURI? we use SVG inline for flawless look -->
-      <img class="avatar" src="https://ui-avatars.com/api/?background=FF8C5A&color=fff&rounded=true&size=120&bold=true&fontsize=0.70&name=Alex+M" alt="avatar">
-    </div>
-    <div class="name">Vansh Sharma</div>
-    <div class="bio"><i class="fas fa-meteor" style="margin-right: 6px;"></i> AI/ML Engineer</div>
-  </div>
-
-  <!-- micro stats animation (dynamic) -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-number" id="followersCount">11.2K</div>
-      <div class="stat-label">Overall Followers</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" id="engagementCount">846</div>
-      <div class="stat-label">Engage</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" id="projectsCount">20+</div>
-      <div class="stat-label">Projects</div>
+  <!-- =====================
+       LOADER (2.5s)
+       Customize: CSS variables + #loaderLogo/#loaderText
+       ===================== -->
+  <div id="pageLoader" class="pageLoader" role="status" aria-label="Loading">
+    <div class="loaderCard glass">
+      <!-- LOADER LOGO: replace text with your logo image anytime (see CSS comments) -->
+      <div class="loaderLogo" id="loaderLogo">VS</div>
+      <div class="loaderText" id="loaderText">Loading…</div>
+      <div class="loaderBar"><div class="loaderBarIn" id="loaderBarIn"></div></div>
+      <div class="loaderHint muted">Loading</div>
     </div>
   </div>
 
-  <!-- Premium links (animated) -->
-  <div class="links-container" id="linkList">
-    <!-- each link is interactive with hover effects, plus share feedback -->
-    <a href="#" class="link-btn" data-url="https://www.linkedin.com/in/vansh-sharma-b9b80b298/" data-label="YouTube Channel">
-      <div class="btn-left">
-       <i class="fab fa-linkedin-in"></i>
-        <span class="btn-text">LinkedIn</span>
-      </div>
-      <div class="btn-arrow"><i class="fas fa-arrow-right"></i> Link</div>
-    </a>
-    <a href="#" class="link-btn" data-url="https://www.instagram.com/vansh565_sharma?igsh=ZWM4bmZ2M2k2ejNr&utm_source=qr" data-label="Instagram">
-      <div class="btn-left">
-        <i class="fab fa-instagram"></i>
-        <span class="btn-text">Instagram</span>
-      </div>
-      <div class="btn-arrow"><i class="fas fa-camera"></i> Explore</div>
-    </a>
-    <a href="#" class="link-btn" data-url="https://x.com/sharmavansh969?s=21" data-label="Twitter/X">
-      <div class="btn-left">
-        <i class="fab fa-twitter"></i>
-        <span class="btn-text">Twitter / X</span>
-      </div>
-      <div class="btn-arrow"><i class="fas fa-feather-alt"></i> Feed</div>
-    </a>
-    <a href="#" class="link-btn" data-url="https://github.com/vansh565" data-label="GitHub">
-      <div class="btn-left">
-        <i class="fab fa-github"></i>
-        <span class="btn-text">GitHub</span>
-      </div>
-      <div class="btn-arrow"><i class="fas fa-code"></i> Repos</div>
-    </a>
-    <a href="#" class="link-btn" data-url="https://portfolio-new-pi-mocha-67.vercel.app/" data-label="Portfolio">
-      <div class="btn-left">
-        <i class="fas fa-globe"></i>
-        <span class="btn-text">Portfolio</span>
-      </div>
-      <div class="btn-arrow"><i class="fas fa-palette"></i> Showcase</div>
-    </a>
+
+  <!-- Background layers -->
+  <div class="bg">
+    <div class="bg-grid"></div>
+    <div class="bg-aurora"></div>
+    <div class="bg-stars" aria-hidden="true"></div>
+    <div class="bg-vignette"></div>
   </div>
 
-  <!-- Additional social floating -->
-  <div class="social-row">
-    
-  
+  <!-- Top progress -->
+  <div class="topbar">
+    <div class="progress" id="progress"></div>
   </div>
 
-  <div class="footer-note">
-    <i class="fas fa-crown" style="margin-right: 5px;"></i> premium ecosystem • tap any link
-  </div>
+  <!-- Navbar -->
+  <header class="navwrap">
+    <nav class="nav glass" id="navbar">
+      <a class="brand" href="#home" aria-label="Go to Home">
+        <span class="brandMark brandMarkImg">
+          <!-- NAV LOGO: Put your logo image path in script.js (PROFILE.navLogo). Control size in style.css (search: NAV LOGO) -->
+          <img id="navLogoImg" class="brandLogoImg" alt="Logo" />
+          <span class="brandLogoFallback" aria-hidden="true">VS</span>
+        </span>
+        <span class="brandText">Vansh Sharma</span>
+      </a>
+
+      <!-- Search -->
+      <div class="navSearch">
+        <div class="searchWrap">
+          <span class="searchIcon">⌕</span>
+          <input id="siteSearch" class="searchInput" type="text" placeholder="Search section / keywords..." autocomplete="off" />
+        </div>
+        <div class="searchDrop" id="searchDrop" aria-hidden="true"></div>
+      </div>
+
+      <div class="navRight">
+        <!-- LANGUAGE: dropdown + flags (translate via code in script.js; extend dictionary as you wish) -->
+        <div class="langSelect" id="langSelect">
+          <button class="iconBtn langBtn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <span class="langIcon" aria-hidden="true">🌐</span>
+            <span class="langCode" id="langCode">EN</span>
+          </button>
+          <div class="langMenu" id="langMenu" role="listbox" aria-label="Language list"></div>
+        </div>
+
+        <button class="iconBtn" id="themeToggle" aria-label="Toggle theme">
+          <span id="themeIcon" class="themeIcon" aria-hidden="true"></span>
+        </button>
+        <button class="navToggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      </div>
+
+      <div class="navLinks" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">certificate</a>
+
+        <!-- NEW -->
+       
+
+       
+
+       
+
+        <a href="#achievements" class="pill">Achievements</a>
+        <a href="#contact" class="pill outline">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="section hero hero-video-section">
+
+  <!-- HERO BACKGROUND VIDEO -->
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/hero%20section%20till%20about%20section.mp4" type="video/mp4">
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="hero-video-overlay"></div>
+
+    <div class="container heroGrid">
+
+      <div class="heroLeft">
+        <div class="kicker" data-i18n="hero_kicker">AI • Full-Stack • Research</div>
+
+       <h1 class="title">
+  <span data-i18n="hero_title_1">Building intelligent products + research work</span>
+  with a <span class="grad" data-i18n="hero_title_3">3D-modern</span>
+  <span data-i18n="hero_title_4">experience.</span>
+</h1>
+
+        <p class="subtitle" data-i18n="hero_subtitle">
+          Results-oriented AI Software Developer with hands-on experience in intelligent & web-based applications.
+          AI Specialist with strong Technical Skills
+        </p>
+
+        <div class="ctaRow">
+           <a class="btn primary" href="#projects" data-i18n="btn_view_projects">
+    View Projects
+  </a>
+           <a class="btn" href="#contact" data-i18n="btn_contact_me">
+    Contact Me
+  </a>
+<a class="btn ghost" href="assets/Vansh's CV.pdf" download>
+  Download Resume
+</a>
 </div>
 
-<!-- toast feedback -->
-<div id="toastMsg" class="click-feedback">✨ Link copied / opened ✨</div>
+        <!-- 5 count-up cards -->
+        <div class="statsGrid" id="statsGrid"></div>
 
-<script>
-  (function() {
-    // PREMIUM ANIMATED TOUCH + dynamic stats counter animation
-    const toast = document.getElementById('toastMsg');
+        <!-- Hero highlight banner image (BIG) -->
+        <div class="heroBanner card glass tilt">
+          <div class="heroBannerIn">
+    <div class="hbTitle" data-i18n="hero_featured">
+      Featured Highlight
+    </div>
+            <div class="hbSub"data-i18n="hero_featured_sub">Building intelligent AI systems, robotics automation, real-time assistants, and premium modern web experiences with innovation-driven solutions.
+    </p></div>
+          </div>
+          <img id="heroBannerImg" class="heroBannerImg" alt="Hero banner" />
+        </div>
+      </div>
+
+      <div class="heroRight">
+        <div class="tilt card3d glass heroCard">
+          <div class="cardGlow"></div>
+
+          <div class="cardInner">
+            <!-- Bigger circle photo -->
+            <div class="avatarRing avatarRingHuge">
+              <div class="avatar avatarHuge">
+                <img id="profileImg" src="vanshsharma.jpeg" alt="Vansh Sharma" />
+                <!-- ONLINE DOT: green pulsing indicator (CSS: search "Online dot") -->
+                <span class="onlineDot" id="onlineDot" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="heroCardInfo">
+  <h3 data-i18n="hero_profile_summary">Profile Summary</h3>
+  <ul class="bullets" id="profileBullets"></ul>
+</div>
+
+            <div class="heroBadges" id="heroBadges"></div>
+          </div>
+        </div>
+
+        <div class="floatingRow">
+          <div class="floatCard glass tilt-sm">
+  <div class="floatTitle" data-i18n="hero_highlight">Highlight</div>
+  <div class="floatValue" id="heroFloat1">1K+ LinkedIn followers</div>
+</div>
+          <div class="floatCard glass tilt-sm">
+  <div class="floatTitle" data-i18n="hero_now">Now</div>
+  <div class="floatValue" id="heroFloat2">Btech(Cse) @ Graphic Era University</div>
+</div>
+        </div>
+
+        <!-- RIGHT SIDE FEATURE HIGHLIGHT (same style as left banner)
+             Customize image in script.js: PROFILE.heroBannerImg2 -->
+      <div class="heroBanner card glass tilt heroBannerRight">
+
+  <div class="heroRightOverlay"></div>
+
+  <img id="heroBannerImg2" class="heroBannerImg" alt="Hero banner 2" />
+
+  <div class="heroRightContent">
+
+   <span class="rightBadge" data-i18n="right_badge">
+  🚀 Innovation Lab
+</span>
+
+<h2 class="rightTitle" data-i18n="right_title">
+  AI • Robotics • Future Tech
+</h2>
+
+<p class="rightSub" data-i18n="right_sub">
+  Creating intelligent AI assistants, robotics automation systems, real-time interactive platforms, and futuristic digital experiences powered by innovation, creativity, and modern technology.
+</p>
+
+<div class="rightFeatures">
+
+  <div class="rightFeature">
+    <span>⚡</span>
+    <p data-i18n="right_feature_1">AI Automation</p>
+  </div>
+
+  <div class="rightFeature">
+    <span>🤖</span>
+    <p data-i18n="right_feature_2">Robotics Systems</p>
+  </div>
+
+  <div class="rightFeature">
+    <span>🌐</span>
+    <p data-i18n="right_feature_3">Full Stack Apps</p>
+  </div>
+
+</div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section themed about-video-section">
+
+  <!-- ABOUT BACKGROUND VIDEO -->
+  <video class="about-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/about%20section.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<!-- DARK OVERLAY -->
+<div class="about-video-overlay"></div>
+
+<div class="container">
+  <div class="sectionHead">
+    <h2 data-i18n="sec_about">About</h2>
+    <p data-i18n="sec_about_sub">What I do and what I'm focused on.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card glass tilt cardXL">
+      <h3 data-i18n="about_who_iam">Who I am</h3>
+      <p class="p" id="aboutText"></p>
+
+      <div class="miniFacts">
+        <div class="miniFact">
+          <div class="mfLabel" data-i18n="about_focus_label">Focus</div>
+          <div class="mfValue" id="aboutFocus"></div>
+        </div>
+        <div class="miniFact">
+          <div class="mfLabel" data-i18n="about_tools_label">Tools</div>
+          <div class="mfValue" id="aboutTools"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card glass tilt cardXL">
+      <h3 data-i18n="about_quick_links">Quick Links</h3>
+      <div class="linkGrid" id="linkGrid"></div>
+    </div>
+  </div>
+</div>
+  <!-- SKILLS -->
+<section id="skills" class="section themed alt skills-video-section">
+
+  <!-- SKILLS BACKGROUND VIDEO -->
+  <video class="skills-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/technical%20experties.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="skills-video-overlay"></div>
+
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_skills">Technical Expertise</h2>
+  <p data-i18n="sec_skills_sub">Stack logos included.</p>
+</div>
+
+      <div class="grid3">
+        <div class="card glass tilt cardXL">
+          <h3>Languages & Core</h3>
+          <div class="logoGrid" id="skillsLang"></div>
+         
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Full-Stack</h3>
+          <div class="logoGrid" id="skillsStack"></div>
+          <div class="softNote">MERN + modern UI.</div>
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Tools & Platforms</h3>
+          <div class="logoGrid" id="skillsTools"></div>
+          <div class="softNote">Deployment-ready.</div>
+        </div>
+      </div>
+          <!-- =====================
+           EXTRA SKILL CARDS (Scalable)
+           Add more cards by copying one block + new id.
+           CSS: search "SKILLS GRID"
+           ===================== -->
+      <div class="grid3 mt16">
+        <div class="card glass tilt cardXL">
+          <h3>AI / ML</h3>
+          <div class="logoGrid logoGridWide" id="skillsAI"></div>
+         
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Cloud / DevOps</h3>
+          <div class="logoGrid logoGridWide" id="skillsCloud"></div>
+         
+        </div>
+
+        <div class="card glass tilt cardXL">
+          <h3>Research / Tools</h3>
+          <div class="logoGrid logoGridWide" id="skillsResearch"></div>
+          <div class="softNote">Paper writing + tooling.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section themed">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_experience">Work Experience</h2>
+ 
+
+      <div class="timeline" id="expTimeline"></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+<section id="education" class="section themed alt edu-video-section">
+
+  <!-- Background Video -->
+  <video class="edu-bg-video" autoplay muted loop playsinline>
+    <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh-portfolio-website-/cc7f8a1dfc90e2ebffed9d9f8b9460c6ba9d060c/education-iit%20p.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="edu-video-overlay"></div>
+
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_education">Education</h2>
+  <p data-i18n="sec_education_sub">Logos + media slots from code.</p>
+</div>
+
+      <div class="grid2" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section themed">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_projects">Projects</h2>
+  <p data-i18n="sec_projects_sub">6+ cards + auto-swap slider. .</p>
+</div>
+
+      <!--  =====================
+           FIXED 9 PROJECT CARDS (3 categories × 3 cards)
+           Edit data in script.js: PROJECT_GRID_9
+           ===================== -->
+      <div class="projCats">
+        <div class="projCat">
+          <div class="projCatTitle">Projects</div>
+          <div class="projCatGrid" id="projCat1"></div>
+        </div>
+
+        <div class="projCat">
+          <div class="projCatTitle"></div>
+          <div class="projCatGrid" id="projCat2"></div>
+        </div>
+
+        <div class="projCat">
+          <div class="projCatTitle"></div>
+          <div class="projCatGrid" id="projCat3"></div>
+        </div>
+      </div>
+
+      
+
+      <!-- <div class="projectWrap">
+        <button class="sliderBtn" id="projPrev" aria-label="Previous project">‹</button>
+
+        <div class="projectSlider" id="projectSlider">
+          <div class="projectTrack" id="projectTrack"></div>
+        </div>
+
+        <button class="sliderBtn" id="projNext" aria-label="Next project">›</button>
+      </div>
+
+      <div class="sliderDots" id="projDots"></div>
+    </div>
+  </section>  -->
+
+ 
+   <section id="certifications" class="section themed alt">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_certificates">Certificates</h2>
+
+</div>
+      <div class="certGrid" id="certGrid"></div> 
+
+      <div class="certSliderWrap">
+        <div class="certHeaderRow">
+          <div>
+            <!-- <div class="certSliderTitle">More certificates</div>
+            <div class="muted">Auto-scroll • customize in script.js</div>
+          </div>
+          <div class="certBtns">
+            <button class="certBtn" id="certPrev" aria-label="Previous certificate">‹</button>
+            <button class="certBtn" id="certNext" aria-label="Next certificate">›</button>
+          </div>
+        </div>
+        <div class="certSlider" id="certSlider">
+          <div class="certTrack" id="certTrack"></div>
+        </div>
+        <div class="sliderDots" id="certDots"></div>
+      </div> -->
+    </div>
+  </section> 
+
+  <!-- =====================
+       RECOMMENDATIONS (NEW)
+       Images + LinkedIn text
+       ===================== -->
+  <!-- <section id="recommendations" class="section themed">
+    <div class="container">
+    <div class="sectionHead">
+  <h2 data-i18n="sec_recommendations">Recommendations</h2>
+  <p data-i18n="sec_recommendations_sub">External recommendation images + LinkedIn recommendations (add/edit in script.js).</p>
+</div>
+
+      <div class="recGrid" id="recGrid"></div>
+    </div>
+  </section>
+
+  MEDIA (NEW)
+  <section id="media" class="section themed alt">
+    <div class="container">
+     <div class="sectionHead">
+  <h2 data-i18n="sec_media">Media</h2>
+  <p data-i18n="sec_media_sub">Auto slider • hover zoom • title/subtitle + 5–7 lines (from code).</p>
+</div> 
+
+      <div class="mediaSliderWrap">
+        <button class="sliderBtn" id="mediaPrev" aria-label="Previous media">‹</button>
+
+        <div class="mediaSlider" id="mediaSlider">
+          <div class="mediaTrack" id="mediaTrack"></div>
+        </div>
+
+        <button class="sliderBtn" id="mediaNext" aria-label="Next media">›</button>
+      </div>
+
+      <div class="sliderDots" id="mediaDots"></div>
+    </div>
+  </section>
+
+  
+
+
+  <!- BLOGS (NEW) -->
+  <!-- <section id="blogs" class="section themed alt">
+    <div class="container">
+      <div class="sectionHead">
+  <h2 data-i18n="sec_blogs">Blogs</h2>
+  <p data-i18n="sec_blogs_sub">Local blogs + optional external RSS fetch (from code).</p>
+</div>
+
+      <div class="blogGrid" id="blogGrid"></div>
+    </div>
+  </section> -->
+
+ 
+
+
+<!-- ACHIEVEMENTS -->
+<div id="achievements" class="achievementPremiumBox">
+
+  <div class="achievementGlow"></div>
+
+  <div class="achievementTop">
+    <span class="achievementBadge" data-i18n="ach_badge">🏆 Achievements</span>
+  </div>
+
+  <h3 data-i18n="ach_title">
+    Innovation • Leadership • Sports Excellence
+  </h3>
+
+  <p data-i18n="ach_desc">
+    Passionate about Artificial Intelligence, Robotics, Innovation, and Sports, I have consistently achieved excellence across technical and athletic domains. I am a 5-time Hackathon Winner and 1-time Ideathon Winner, recognized for developing impactful AI, automation, and robotics-based solutions for real-world challenges. Alongside technology, I am also a 4-time Gold Medalist in State and District level Netball championships and represented at the National level 5 times. These achievements reflect strong leadership, creativity, teamwork, dedication, and problem-solving abilities developed through continuous learning and competitive experiences.
+  </p>
+
+  <div class="achievementHighlights">
+
+    <div class="highlightItem">
+      <h4>5×</h4>
+      <span data-i18n="ach_hackathon">Hackathon Winner</span>
+    </div>
+
+    <div class="highlightItem">
+      <h4>1×</h4>
+      <span data-i18n="ach_ideathon">Ideathon Winner</span>
+    </div>
+
+    <div class="highlightItem">
+      <h4>4×</h4>
+      <span data-i18n="ach_gold">Gold Medalist at State level and District level</span>
+    </div>
+
+    <div class="highlightItem">
+      <h4>5×</h4>
+      <span data-i18n="ach_national">National Player</span>
+    </div>
+
+  </div>
+
+</div>
+</div>
+  <section id="contact" class="section contact-section">
+
+  <!-- Video full background -->
+  <div class="contact-video-bg-container">
+    <video 
+      class="contact-bg-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="auto">
+      <source src="https://raw.githubusercontent.com/bh-yogendra1/Yogendra-Bh_pm/main/contactfooter%20left%20side.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Overlay -->
+  <div class="contact-video-overlay"></div>
+
+  <!-- Content on top -->
+ <div class="container">
+
+  <h2 data-i18n="sec_contact">Contact</h2>
+  <p class="lead-text" data-i18n="sec_contact_sub">Let's collaborate on AI, full-stack & research projects.</p>
+
+  <div class="contact-grid">
+
+    <!-- ===================== CONTACT SECTION (CLEANED) ===================== -->
+<!-- Only the functional Send Message card remains. The Quick Info card has been removed. -->
+
+<!-- Send Message card with Web3Forms API Integration -->
+<div class="card glass tilt contactFormCard cardXL">
+  
+   <img src="assets/v.jpeg" alt="Vansh Sharma" 
+  <p class="muted">Fill the form below and I'll get back to you soon.</p>
+        <!-- Your quick info content / JS filled -->
+      </div>
+
+      <div class="card glass tilt contactFormCard cardXL">
+    <h3 data-i18n="contact_send_message">Send a Message</h3>
+      <p class="muted" data-i18n="contact_form_hint">Fill the form below and I'll get back to you soon.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="2c717eb9-02f1-4d75-ab60-a4227f6a1cc0">
     
-    // Function to show snackbar style feedback
-    function showMessage(text, isError = false) {
-      if (!toast) return;
-      toast.style.transition = "opacity 0.2s, transform 0.2s";
-      toast.innerText = text || (isError ? "⚠️ Could not open" : "✨ Link activated ✨");
-      toast.style.opacity = "1";
-      toast.style.transform = "translateX(-50%) scale(1)";
-      setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateX(-50%) scale(0.85)";
-      }, 2000);
-    }
-
-    // simulate open link with custom logic: using window.open but respect user click => new tab (prevent default)
-    const allLinks = document.querySelectorAll('.link-btn');
-    const socialIcons = document.querySelectorAll('.social-icon');
-
-    function handleRedirect(event, url, platformName) {
-      event.preventDefault();
-      if (!url) {
-        showMessage("🔗 Link config missing", true);
-        return;
-      }
-      // Check if url has http/https, else prepend (safety)
-      let finalUrl = url;
-      if (!url.startsWith('http://') && !url.startsWith('https://')) {
-        finalUrl = 'https://' + url;
-      }
-      // open in new tab for better engagement
-      window.open(finalUrl, '_blank', 'noopener,noreferrer');
-      showMessage(`🚀 Opening ${platformName || 'link'}`, false);
-    }
-
-    // Assign click listeners for main link buttons
-    allLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        let targetUrl = link.getAttribute('data-url');
-        let label = link.getAttribute('data-label') || 'resource';
-        if (targetUrl) {
-          handleRedirect(e, targetUrl, label);
-        } else {
-          // fallback demo
-          showMessage("✨ demo link (simulated)", false);
-          console.log("premium demo link");
-        }
-      });
-    });
-
-    // Social icons mapping custom links (premium)
-    const socialMap = {
-      tiktok: "https://tiktok.com/@alexmorgan",
-      discord: "https://discord.gg/creativenerds",
-      spotify: "https://open.spotify.com/user/alexmorgan",
-      linkedin: "https://linkedin.com/in/alexmorgan"
-    };
-
-    socialIcons.forEach(icon => {
-      icon.addEventListener('click', (e) => {
-        e.preventDefault();
-        const socialKey = icon.getAttribute('data-social');
-        if (socialKey && socialMap[socialKey]) {
-          handleRedirect(e, socialMap[socialKey], socialKey.toUpperCase());
-        } else {
-          // default fallback link: profile
-          handleRedirect(e, "https://linktr.ee/example", "social");
-        }
-      });
-    });
-
-    // ANIMATED COUNTER: increment stats numbers on load (premium micro-interaction)
-    // followers from 9.2k -> 12.4k, engagement from 500 -> 846, projects from 10->14
-    const followersEl = document.getElementById('followersCount');
-    const engagementEl = document.getElementById('engagementCount');
-    const projectsEl = document.getElementById('projectsCount');
+    <!-- Optional: redirect after submission (leave empty to stay on page) -->
+    <input type="hidden" name="redirect" value="false">
     
-    // parse starting numbers
-    function animateNumber(element, start, end, suffix = '', isFloat = false) {
-      if (!element) return;
-      let current = start;
-      const duration = 1500; // ms
-      const stepTime = 16;
-      const steps = duration / stepTime;
-      const increment = (end - start) / steps;
-      let step = 0;
-      const interval = setInterval(() => {
-        step++;
-        if (step >= steps) {
-          element.innerText = (isFloat ? end.toFixed(1) : Math.round(end)) + suffix;
-          clearInterval(interval);
-          return;
-        }
-        current += increment;
-        let displayVal = isFloat ? current.toFixed(1) : Math.floor(current);
-        element.innerText = displayVal + suffix;
-      }, stepTime);
-    }
-
-    // initial values update from current text content (numeric parse)
-    let initFollowers = 9.2; // we will override from existing text? text "12.4K" but for animate we start from 9.2K to 12.4
-    let initEngage = 512;
-    let initProjects = 8;
-
-    // Extract numeric values from displayed (pre-set initial numbers)
-    if (followersEl) {
-      let txt = followersEl.innerText; // "12.4K"
-      let numeric = parseFloat(txt);
-      if (isNaN(numeric)) numeric = 12.4;
-      initFollowers = 9.2;
-      animateNumber(followersEl, 9.2, numeric, 'K', true);
-    }
-    if (engagementEl) {
-      let txtEng = engagementEl.innerText; // "846"
-      let targetEng = parseInt(txtEng);
-      if (isNaN(targetEng)) targetEng = 846;
-      initEngage = 512;
-      animateNumber(engagementEl, 512, targetEng, '', false);
-    }
-    if (projectsEl) {
-      let txtProj = projectsEl.innerText; // "14+"
-      let targetProj = parseInt(txtProj);
-      if (isNaN(targetProj)) targetProj = 14;
-      initProjects = 7;
-      animateNumber(projectsEl, 7, targetProj, '+', false);
-    }
-
-    // additional ripple effect on click (premium feel)
-    const allClickables = document.querySelectorAll('.link-btn, .social-icon');
-    function createRipple(event, element) {
-      const rect = element.getBoundingClientRect();
-      const circle = document.createElement('span');
-      const diameter = Math.max(rect.width, rect.height);
-      const radius = diameter / 2;
-      const left = event.clientX - rect.left - radius;
-      const top = event.clientY - rect.top - radius;
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.position = 'absolute';
-      circle.style.left = `${left}px`;
-      circle.style.top = `${top}px`;
-      circle.style.borderRadius = '50%';
-      circle.style.backgroundColor = 'rgba(255, 215, 130, 0.5)';
-      circle.style.pointerEvents = 'none';
-      circle.style.transform = 'scale(0)';
-      circle.style.transition = 'transform 0.45s ease-out, opacity 0.5s';
-      circle.style.zIndex = '999';
-      element.style.position = 'relative';
-      element.style.overflow = 'hidden';
-      element.appendChild(circle);
-      requestAnimationFrame(() => {
-        circle.style.transform = 'scale(4)';
-        circle.style.opacity = '0';
-      });
-      setTimeout(() => {
-        if (circle.parentNode) circle.remove();
-      }, 500);
-    }
+    <!-- Spam protection (honeypot) -->
+    <input type="checkbox" name="botcheck" style="display: none;">
     
-    allClickables.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        createRipple(e, btn);
-      });
-    });
+    <div class="formRow2">
+     <input class="input" type="text" name="name" placeholder="Your Name" data-i18n-placeholder="form_name" required>
+          <input class="input" type="email" name="email" placeholder="Your Email" data-i18n-placeholder="form_email" required>
+        </div>
+   <input class="input" type="text" name="subject" placeholder="Subject" data-i18n-placeholder="form_subject" required>
+        <textarea class="input textarea" name="message" rows="7" placeholder="Your Message" data-i18n-placeholder="form_message" required></textarea>
+        
+        <button class="btn primary formBtn" type="submit" data-i18n="form_send">
+          <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message
+        </button>
+        <div class="formHint" id="formStatus"></div>
+      </form>
+    </div>
+    </div>
 
-    // hover micro parallax tilt? subtle shadow animation on card
-    const card = document.querySelector('.link-card');
-    if (card) {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const xAxis = (e.clientX - rect.left - rect.width/2) / 25;
-        const yAxis = (e.clientY - rect.top - rect.height/2) / 25;
-        card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${-yAxis}deg) translateY(-4px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0px)';
-      });
-    }
+  </div>
 
-    // Preloader off initial interactions ready, set body visible
-    console.log('Premium animated LinkTree ready | nexus design');
-    
-    // show welcome interactive snack
-    setTimeout(() => {
-      showMessage("✨ Premium LinkTree ready • tap shine", false);
-    }, 800);
-  })();
-</script>
+</section>
+
+  <!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer">
+
+  <!-- GITHUB GLOBE BACKGROUND -->
+  <div class="ghGlobeBg ghGlobeBgFooter" aria-hidden="true">
+    <iframe 
+      class="ghGlobeFrame" 
+      src="https://janarosmonaliev.github.io/github-globe/" 
+      loading="lazy">
+    </iframe>
+    <div class="ghGlobeOverlay"></div>
+  </div>
+
+  <!-- FOOTER CONTENT -->
+  <div class="container footGrid">
+
+    <div class="footCol">
+      <div class="footBrand">
+        <span class="brandMark sm brandMarkImg">
+          <img id="footerLogoImg" class="brandLogoImg sm" alt="Logo" />
+          <span class="brandLogoFallback" aria-hidden="true">VS</span>
+        </span>
+        <div>
+      <div class="footName" data-i18n="foot_name">Vansh Sharma</div>
+<div class="footTag" data-i18n="foot_tag">AI • Full-Stack • ML</div>
+</div>
+</div>
+
+      <p class="footNote">© <span id="year"></span> Vansh Sharma
+
+      <div class="socialRow" id="socialRow"></div>
+
+      <div class="footQrWrap">
+
+ <div class="footQrWrap">
+
+  <div class="footQrCard glass">
+
+    <div class="footQrGlow"></div>
+
+    <div class="footQrTop">
+      <span class="footQrBadge" data-i18n="foot_qr_badge">📱 Connect Instantly</span>
+    </div>
+
+    <div class="footQr">
+      <img src="assets/link.png" alt="QR Code">
+    </div>
+
+    <h3 data-i18n="foot_qr_title">Scan QR Code</h3>
+
+    <p data-i18n="foot_qr_desc">
+  Quickly access my portfolio, resume, projects, LinkedIn profile, and professional updates directly from your mobile device.
+</p>
+
+  </div>
+
+</div>
+
+</div>
+      <a class="backTop" href="#home">↑ Back to top</a>
+    </div>
+
+    <div class="footCol">
+      <div class="footTitle" data-i18n="foot_quick">Quick Links</div>
+      <div class="footLinks" id="footerLinks"></div>
+
+      <div class="legalRow">
+       <a href="#" class="muted" data-i18n="foot_privacy">Privacy</a>
+        <span class="muted">•</span>
+       <a href="#" class="muted" data-i18n="foot_terms">Terms</a>
+
+        <span class="muted">•</span>
+         <a href="#" class="muted" data-i18n="foot_sitemap">Sitemap</a>
+      </div>
+    </div>
+
+    <div class="footCol">
+       <div class="footTitle" data-i18n="foot_schedule">Schedule Meeting</div>
+
+      <div class="meetGrid">
+        <input class="input" placeholder="Your Name" />
+        <input class="input" placeholder="Your Email" />
+        <input class="input" placeholder="Preferred Date & Time" />
+        <input class="input" placeholder="Topic" />
+        <button class="btn primary meetBtn" data-i18n="meet_request">Request</button>
+      </div>
+
+      <div class="footDivider"></div>
+
+      <div class="footTitle" data-i18n="foot_newsletter">Newsletter</div>
+      <div class="newsRow">
+    <input class="input newsInput" placeholder="Email address" data-i18n-placeholder="news_email" />
+    <button class="btn primary newsBtn" data-i18n="news_subscribe">Subscribe</button>
+  </div>
+
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
