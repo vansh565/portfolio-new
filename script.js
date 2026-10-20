@@ -113,6 +113,21 @@ const SKILLS = {
 // Experience cards (bigger + 2 images + pdf)
 const EXPERIENCES = [
   {
+    key: "nextflyt",
+    role: "AI/ML Intern",
+    org: "NextFlyt Aerospace",
+    date: "June 2026 – Present · Remote",
+    logo: "",
+    points: [
+      "Developing computer vision models for aerial imagery using YOLO and deep learning.",
+      "Creating and annotating large-scale datasets for object detection and vehicle classification.",
+      "Fine-tuning deep learning models and evaluating their performance for drone-based AI applications."
+    ],
+    tags: ["AI/ML", "YOLO", "Computer Vision", "Deep Learning"],
+    media: [],
+    links: []
+  },
+  {
     key: "geu",
     role: "Summer Intern",
     org: "Graphic Era Deemed University (GEU), Dehradun",
@@ -267,6 +282,13 @@ const PROJECT_GRID_9 = {
     { title:"Project 7", subtitle:"Green Heaven ", stack:["Node js","Mongo DB","Html5","Css3"], img:"assets/plant.png", link1:{label:"GitHub", url:"ADD_LINK"}, link2:{label:"Live", url:"https://new-plant.vercel.app/"} },
   ]
 };
+PROJECT_GRID_9.cat1.unshift({
+  title: "RL-Based Crop Disease Detection & Spraying System",
+  subtitle: "Drone-based precision agriculture system for disease detection, GPS field mapping, and SAC-optimized pesticide spraying to improve crop protection.",
+  stack: ["Python", "DL", "SAC", "OpenCV", "Flask"],
+  img: "assets/plant.png",
+  link1: { label: "GitHub", url: "https://github.com/vansh565" }
+});
 
 // =====================
 // NEW: Certificates (6 cards) + slider rail
@@ -1691,6 +1713,64 @@ form_send: "发送",
 
 
 
+// Added portfolio entries are translated in all languages offered by the selector.
+Object.assign(TEXT.en, {
+  exp_nextflyt_role: "AI/ML Intern", exp_nextflyt_date: "June 2026 – Present · Remote",
+  exp_nextflyt_1: "Developing computer vision models for aerial imagery using YOLO and deep learning.",
+  exp_nextflyt_2: "Creating and annotating large-scale datasets for object detection and vehicle classification.",
+  exp_nextflyt_3: "Fine-tuning deep learning models and evaluating their performance for drone-based AI applications.",
+  proj_crop_title: "RL-Based Crop Disease Detection & Spraying System",
+  proj_crop_desc: "Developed a drone-based precision agriculture system that detects crop diseases, performs GPS field mapping, and uses SAC reinforcement learning to optimize pesticide spraying and improve crop protection."
+});
+Object.assign(TEXT.hi, {
+  exp_nextflyt_role: "AI/ML इंटर्न", exp_nextflyt_date: "जून 2026 – वर्तमान · रिमोट",
+  exp_nextflyt_1: "YOLO और डीप लर्निंग का उपयोग करके हवाई तस्वीरों के लिए कंप्यूटर विज़न मॉडल विकसित करना।",
+  exp_nextflyt_2: "ऑब्जेक्ट डिटेक्शन और वाहन वर्गीकरण के लिए बड़े डेटासेट बनाना और उनका एनोटेशन करना।",
+  exp_nextflyt_3: "ड्रोन AI अनुप्रयोगों के लिए डीप लर्निंग मॉडल को फाइन-ट्यून करना और उनका मूल्यांकन करना।",
+  proj_crop_title: "RL आधारित फसल रोग पहचान और छिड़काव प्रणाली",
+  proj_crop_desc: "ड्रोन आधारित सटीक कृषि प्रणाली विकसित की, जो फसल रोग पहचानती है, GPS क्षेत्र मानचित्रण करती है और बेहतर फसल सुरक्षा के लिए SAC रीइन्फोर्समेंट लर्निंग से कीटनाशक छिड़काव को अनुकूलित करती है।"
+});
+Object.assign(TEXT.fr, {
+  exp_nextflyt_role: "Stagiaire IA/ML", exp_nextflyt_date: "Juin 2026 – Aujourd’hui · À distance",
+  exp_nextflyt_1: "Développement de modèles de vision par ordinateur pour l’imagerie aérienne avec YOLO et l’apprentissage profond.",
+  exp_nextflyt_2: "Création et annotation de jeux de données à grande échelle pour la détection d’objets et la classification de véhicules.",
+  exp_nextflyt_3: "Ajustement et évaluation de modèles d’apprentissage profond pour les applications IA par drone.",
+  proj_crop_title: "Détection des maladies des cultures et pulvérisation par apprentissage par renforcement",
+  proj_crop_desc: "Système agricole de précision par drone qui détecte les maladies, cartographie les champs par GPS et optimise la pulvérisation grâce à l’apprentissage par renforcement SAC."
+});
+Object.assign(TEXT.de, {
+  exp_nextflyt_role: "KI/ML-Praktikant", exp_nextflyt_date: "Juni 2026 – heute · Remote",
+  exp_nextflyt_1: "Entwicklung von Computer-Vision-Modellen für Luftbilder mit YOLO und Deep Learning.",
+  exp_nextflyt_2: "Erstellung und Annotation umfangreicher Datensätze zur Objekterkennung und Fahrzeugklassifizierung.",
+  exp_nextflyt_3: "Feinabstimmung und Bewertung von Deep-Learning-Modellen für drohnenbasierte KI-Anwendungen.",
+  proj_crop_title: "RL-basiertes System zur Erkennung von Pflanzenkrankheiten und zum Sprühen",
+  proj_crop_desc: "Drohnenbasiertes Präzisionslandwirtschaftssystem zur Krankheitserkennung, GPS-Feldkartierung und SAC-optimierten Pestizidausbringung."
+});
+Object.assign(TEXT.es, {
+  exp_nextflyt_role: "Becario de IA/ML", exp_nextflyt_date: "Junio de 2026 – actualidad · Remoto",
+  exp_nextflyt_1: "Desarrollo de modelos de visión artificial para imágenes aéreas con YOLO y aprendizaje profundo.",
+  exp_nextflyt_2: "Creación y anotación de grandes conjuntos de datos para detección de objetos y clasificación de vehículos.",
+  exp_nextflyt_3: "Ajuste y evaluación de modelos de aprendizaje profundo para aplicaciones de IA con drones.",
+  proj_crop_title: "Sistema de detección de enfermedades y fumigación con aprendizaje por refuerzo",
+  proj_crop_desc: "Sistema de agricultura de precisión con drones que detecta enfermedades, mapea campos por GPS y optimiza la fumigación con aprendizaje por refuerzo SAC."
+});
+Object.assign(TEXT.ja, {
+  exp_nextflyt_role: "AI/MLインターン", exp_nextflyt_date: "2026年6月 – 現在 · リモート",
+  exp_nextflyt_1: "YOLOと深層学習を用いて、航空画像向けのコンピュータビジョンモデルを開発。",
+  exp_nextflyt_2: "物体検出と車両分類のため、大規模データセットを作成・注釈。",
+  exp_nextflyt_3: "ドローンAI向け深層学習モデルを調整し、性能を評価。",
+  proj_crop_title: "強化学習による作物病害検出・散布システム",
+  proj_crop_desc: "病害検出、GPS圃場マッピング、SAC強化学習による農薬散布最適化を行うドローン精密農業システムを開発。"
+});
+Object.assign(TEXT.zh, {
+  exp_nextflyt_role: "AI/ML 实习生", exp_nextflyt_date: "2026年6月 – 至今 · 远程",
+  exp_nextflyt_1: "使用 YOLO 和深度学习为航空影像开发计算机视觉模型。",
+  exp_nextflyt_2: "创建并标注用于目标检测和车辆分类的大规模数据集。",
+  exp_nextflyt_3: "微调深度学习模型并评估其在无人机 AI 应用中的表现。",
+  proj_crop_title: "基于强化学习的作物病害检测与喷洒系统",
+  proj_crop_desc: "开发无人机精准农业系统，可检测作物病害、进行 GPS 田块测绘，并利用 SAC 强化学习优化农药喷洒，提升作物保护效果。"
+});
+
 // Simple t() helper
 function t(langKey, token, fallback) {
   return TEXT[langKey]?.[token] || TEXT.en?.[token] || fallback || token;
@@ -2004,40 +2084,41 @@ if (expTimeline){
           <div class="org">
             <img class="orgLogo" alt="${escapeHtml(exp.org)} logo" src="${escapeHtml(exp.logo)}" onerror="this.style.display='none'">
             <div>
-              <div class="tRole">${escapeHtml(exp.role)}</div>
+              <div class="tRole" ${exp.key === "nextflyt" ? 'data-i18n="exp_nextflyt_role"' : ""}>${escapeHtml(exp.role)}</div>
               <div class="tOrg">${escapeHtml(exp.org)}</div>
             </div>
           </div>
-          <div class="tDate">${escapeHtml(exp.date)}</div>
+          <div class="tDate" ${exp.key === "nextflyt" ? 'data-i18n="exp_nextflyt_date"' : ""}>${escapeHtml(exp.date)}</div>
         </div>
 
         <div class="tBody">
           <ul class="bullets">
-            ${exp.points.map(p => `<li>${escapeHtml(p)}</li>`).join("")}
+            ${exp.points.map((p, i) => `<li ${exp.key === "nextflyt" ? `data-i18n="exp_nextflyt_${i + 1}"` : ""}>${escapeHtml(p)}</li>`).join("")}
           </ul>
 
           <div class="tagRow">
             ${exp.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
           </div>
 
-          <div class="mediaBlock">
+          ${exp.media?.length ? `<div class="mediaBlock">
             <div class="mediaHead">
               <div class="mediaTitle">Certificates / Proofs</div>
               
             </div>
             <div class="mediaGrid">${renderMediaGrid(exp.media)}</div>
-          </div>
+          </div>` : ""}
 
-          <div class="btnRow">
+          ${exp.links?.some(link => link.url) ? `<div class="btnRow">
             ${renderBtnRow([
               { label: exp.links?.[0]?.label || "Link 1", url: exp.links?.[0]?.url, primary: true },
               { label: exp.links?.[1]?.label || "Link 2", url: exp.links?.[1]?.url }
             ])}
-          </div>
+          </div>` : ""}
         </div>
       </div>
     </div>
   `).join("");
+  applyLanguage(localStorage.getItem("lang") || "en");
 }
 
 // =====================
@@ -2083,8 +2164,8 @@ function renderProjectGrid9(){
 
   const card = (p) => `
     <div class="projGridCard tilt-sm">
-      <div class="pTitle">${escapeHtml(p.title)}</div>
-      <div class="muted" style="margin-top:6px">${escapeHtml(p.subtitle || "")}</div>
+      <div class="pTitle" ${p.title.startsWith("RL-Based Crop") ? 'data-i18n="proj_crop_title"' : ""}>${escapeHtml(p.title)}</div>
+      <div class="muted" style="margin-top:6px" ${p.title.startsWith("RL-Based Crop") ? 'data-i18n="proj_crop_desc"' : ""}>${escapeHtml(p.subtitle || "")}</div>
 
       <div class="projStackRow">
         ${(p.stack || []).slice(0,12).map(s => `<span class="stackPill">${escapeHtml(s)}</span>`).join("")}
@@ -2106,6 +2187,7 @@ function renderProjectGrid9(){
   c3.innerHTML = PROJECT_GRID_9.cat3.map(card).join("");
 }
 renderProjectGrid9();
+applyLanguage(localStorage.getItem("lang") || "en");
 
 // =====================
 // Projects slider (auto swap)
